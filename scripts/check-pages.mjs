@@ -107,7 +107,7 @@ const product3d = projects.find(project => project.id === '3d-product-experience
 for (const text of ['<dt>Role</dt><dd>Solo Developer</dd>', '<dt>Focus</dt><dd>Front-End · 3D · Interactive Experience</dd>', '<dt>Status</dt><dd>Completed</dd>']) assert(documents.get('/projects/3d-product-experience').includes(text), `3D project facts: ${text}`)
 assert(product3d.technologies.includes('Blender') && product3d.technologies.includes('Three.js'), 'Real 3D technologies retained')
 assert.equal(product3d.image, '/images/projects/3D Product Experience_1.png', 'Second real screenshot is the principal preview')
-assert.equal(product3d.gallery.length, 2, 'Both real screenshots in the gallery')
+assert.equal(product3d.gallery.length, 3, 'Three real screenshots in the gallery')
 for (const route of ['/', '/projects', '/projects/3d-product-experience']) assert(documents.get(route).includes(`src="${base}${product3d.image}"`), `${route}: real 3D principal image`)
 for (const src of product3d.gallery) assert(documents.get('/projects/3d-product-experience').includes(`src="${base}${src}"`), 'Real 3D gallery assets')
 for (const text of ['React/TypeScript frontend', 'C#/.NET backend', '<dt>Frontend</dt>', '<dt>Backend</dt>', '<dt>Data</dt>', '<dt>Authentication</dt>', 'EF Core', 'JWT', 'REST API']) assert(deskentra.includes(text), `Deskentra architecture: ${text}`)

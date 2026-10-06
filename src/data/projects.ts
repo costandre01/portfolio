@@ -69,7 +69,7 @@ export const projects: Project[] = [
     image: '/images/projects/3D Product Experience_1.png',
     imageAlt: 'Interactive 3D turntable beside product details, playback controls, wood customization and volume control',
     imageWidth: 1849, imageHeight: 884,
-    gallery: ['/images/projects/3D Product Experience.png', '/images/projects/3D Product Experience_1.png'],
+    gallery: ['/images/projects/3D Product Experience.png', '/images/projects/3D Product Experience_1.png', '/images/projects/3D Product Experience_2.png'],
     technologies: ['JavaScript', 'Three.js', 'Blender', 'HTML', 'CSS'], githubUrl: 'https://github.com/costandre01/3d-product-experience', demoUrl: 'https://3d-product-experience.vercel.app', demoLabel: 'Live Demo', featured: true,
     detail: {
       facts: [
@@ -81,7 +81,7 @@ export const projects: Project[] = [
       features: ['Interactive 3D model with rotation and zoom', 'Opening and closing the turntable lid', 'Starting and stopping the record', 'Changing records', 'Changing the material and wood finish', 'Volume control', 'Integration into an e-commerce-style interface'],
       technicalTitle: 'Technology & interaction',
       technicalPoints: ['JavaScript and Three.js for the interactive 3D experience.', 'Blender as part of the 3D production toolkit.', 'HTML and CSS for the surrounding product interface.'],
-      galleryCaptions: ['3D turntable with the lid open and playback stopped, alongside the product and customization controls.', '3D turntable during playback, with the product panel, material controls and volume slider visible.'],
+      galleryCaptions: ['3D turntable with the lid open and playback stopped, alongside the product and customization controls.', '3D turntable during playback, with the product panel, material controls and volume slider visible.', '3D turntable rotated to a different angle, showing how the product can be manipulated and explored.'],
     },
   },
   {

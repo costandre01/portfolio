@@ -17,7 +17,7 @@ export function pageMetadata(pathname: string) {
     : pathname === '/about'
       ? { title: 'André Costa | About & CV', description: 'The professional experience, education, technical skills and CV of André Costa, a software developer with a background in CNC/CAM and industry.' }
       : pathname === '/projects'
-        ? { title: 'André Costa | Software Projects', description: 'Explore André Costa’s software projects: Eldritch Horror, Deskentra and 3D Product Experience. Real interfaces, technical details, demos and GitHub repositories.' }
+        ? { title: 'André Costa | Software Projects', description: 'Explore Eldritch Horror, Deskentra, 3D Product Experience and IoT Smart Home Platform: interfaces, technical details, demos and GitHub repositories.' }
         : project
           ? { title: `${project.title} | André Costa`, description: project.description }
           : { title: 'Page not found | André Costa', description: 'This page could not be found. Explore André Costa’s portfolio and software projects.' }

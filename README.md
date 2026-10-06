@@ -15,12 +15,13 @@ npm run preview
 
 ## Pages and navigation
 
-- `/` — complete home with profile, key skills, experience preview, projects, skills, CV and contact.
+- `/` — landing page with Hero, core technologies, selected work, short profile and contact.
 - `/about` — web CV with profile, professional experience, education, technical skills, soft skills, languages and contacts.
 - `/projects` — all published projects from the shared data array.
 - `/projects/eldritch-horror`
 - `/projects/deskentra`
 - `/projects/3d-product-experience`
+- `/projects/iot-smart-home`
 
 Navigation uses ordinary HTML links and native browser history. On page load, a small path resolver selects the React page. No router dependency is required. In development, Vite serves the application for direct paths.
 
@@ -40,7 +41,7 @@ npm run build
 npm run check:pages
 ```
 
-In CI, set the `VITE_BASE_PATH` environment variable to your actual repository subpath, including both slashes. The shared URL helper applies it to navigation, photos, project images, galleries and CV links; Vite applies it to built assets. Return to root mode by removing this environment variable before rebuilding. No 404 redirect workaround is required for the six generated pages.
+In CI, set the `VITE_BASE_PATH` environment variable to your actual repository subpath, including both slashes. The shared URL helper applies it to navigation, photos, project images, galleries and CV links; Vite applies it to built assets. Return to root mode by removing this environment variable before rebuilding. No 404 redirect workaround is required for the seven generated pages.
 
 Optionally set `site.url` in `src/data/site.ts` to the real public site URL (including the repository subpath for a project site), then rebuild to emit canonical and `og:url` metadata. It is blank until the actual deployment address is known.
 
@@ -54,9 +55,9 @@ The existing PDF stays at `public/cv/andre-costa-cv.pdf`. Replace that file for 
 
 To activate the professional photo, add `public/images/andre-costa.webp` and set `site.photo.available` to `true`. The photo area is hidden while it is unavailable, including when an enabled image fails to load.
 
-All three published projects use real main screenshots with contain/center positioning. Secondary images are loaded only on their detail pages. 3D Product Experience uses the supplied JavaScript, Three.js, Blender, HTML and CSS stack and live demo.
+All four published projects use real main screenshots with contain/center positioning. Secondary images are loaded only on their detail pages. 3D Product Experience uses the supplied JavaScript, Three.js, Blender, HTML and CSS stack and live demo.
 
-Still to fill: descriptions for IoT and Online Store, and repository URLs for Online Store and World Cup Manager. No unconfirmed content is added for these projects.
+Still to fill: the description for Online Store and repository URLs for Online Store and World Cup Manager. No unconfirmed content is added for these projects.
 
 Animations respect reduced motion. Mobile menus support Escape, outside clicks, native keyboard navigation and focus states.
 
@@ -77,17 +78,17 @@ Updated:
 - `src/data/site.ts`, `src/data/projects.ts`, `src/types/project.ts`.
 - `index.html`, `package.json`, `vite.config.ts`, `eslint.config.js`, `README.md`.
 
-No dependencies were added. The existing CV PDF and screenshot files were preserved. The generated `dist/` output includes six route documents, assets, the PDF, `404.html` and `.nojekyll`.
+No dependencies were added. The existing CV PDF and screenshot files were preserved. The generated `dist/` output includes seven route documents, assets, the PDF, `404.html` and `.nojekyll`.
 
 ## Modern project-led homepage update
 
 The homepage now uses an editorial two-line name, explicit Front-End/React positioning and two prioritized actions. `HeroProjectsShowcase` reuses the real Eldritch Horror and Deskentra assets in lightweight linked frames; the screenshots are contained in full, with overlap at frame edges only. The first image has high fetch priority. No generated imagery, animation dependencies or new packages were used.
 
-Home order: Hero → technology strip → selected projects → short profile → experience → skills → CV → contact. Featured cards prioritize images and short summaries; the full technical descriptions remain on the detail pages. The 3D project now uses its real screenshot. The real profile photo appears only on About.
+Home order: Hero → technology strip → selected projects → short profile → contact. Featured cards prioritize images and short summaries; the full technical descriptions remain on the detail pages. The 3D project now uses its real screenshot. The real profile photo appears only on About.
 
 ### Publication
 
-Every project has an explicit `published` flag. IoT Smart Home Platform, Online Store and World Cup Manager remain in `projects.ts` as drafts. `publishedProjects` is shared by the cards, hero, route resolver, related links, prerender, structured data and sitemap. Set `published: true` only after confirming the public description, technologies and usable project links. Drafts are never rendered into public HTML.
+Every project has an explicit `published` flag. IoT Smart Home Platform is published. Online Store and World Cup Manager remain in `projects.ts` as drafts. `publishedProjects` is shared by the cards, hero, route resolver, related links, prerender, structured data and sitemap. Set `published: true` only after confirming the public description, technologies and usable project links. Drafts are never rendered into public HTML.
 
 ### Search and social metadata
 
@@ -109,7 +110,7 @@ Updated:
 - `src/App.tsx`, `src/index.css`, `src/lib/metadata.ts`, `src/entry-server.tsx`.
 - `scripts/prerender.mjs`, `scripts/check-pages.mjs`, `README.md`.
 
-Further supplied content: confirmed descriptions and links for the three draft projects; actual deployment URL. The real portrait and both 3D Product Experience screenshots are integrated.
+Further supplied content: confirmed descriptions and links for the two draft projects; actual deployment URL. The real portrait and all three 3D Product Experience screenshots are integrated.
 
 
 ## Profile, navigation and CV portrait refinement
@@ -118,7 +119,7 @@ The hero retains its project showcase and uses the positioning “Software Devel
 
 A small AI & Development row inside the existing Technology Stack lists AI-assisted Development, LLM workflows, RAG and Vision/OCR. About contains one short paragraph describing their use for analysis, debugging, testing, documentation and research. There is no separate AI homepage section or product branding. Person structured data uses the same confirmed capabilities.
 
-`PageSectionNav.tsx` is reused on About and all three project details only. At 1280px and above it occupies the outer gutter with a minimal sticky list; smaller viewports use native details/summary. Real anchor links are prerendered, the disclosure works without JavaScript, and IntersectionObserver updates aria-current without scroll listeners or URL changes. Only existing sections are linked; projects without a gallery have no Gallery item. Stack and Links point to the existing groups in the project header. The global scroll padding plus a small anchor margin keeps the sticky header clear. Reduced motion remains respected.
+`PageSectionNav.tsx` is reused on About and all four project details only. At 1280px and above it occupies the outer gutter with a minimal sticky list; smaller viewports use native details/summary. Real anchor links are prerendered, the disclosure works without JavaScript, and IntersectionObserver updates aria-current without scroll listeners or URL changes. Only existing sections are linked; projects without a gallery have no Gallery item. Stack and Links point to the existing groups in the project header. The global scroll padding plus a small anchor margin keeps the sticky header clear. Reduced motion remains respected.
 
 The real portrait was extracted from the embedded image in `public/cv/andre-costa-cv.pdf`, at its original 308 × 410 resolution, and saved as `public/images/andre-costa.webp` (approximately 12 KB). It is displayed only in About's profile, with intrinsic dimensions, preserved proportions and no retouching. The PDF was not modified. The central LinkedIn URL is now `https://www.linkedin.com/in/andre-costa-/` and is reused by Hero, Contact, Footer and structured data.
 
@@ -132,7 +133,7 @@ No dependencies were added. Validation includes fragment target existence, uniqu
 
 Deskentra explicitly describes its React/TypeScript frontend and C#/.NET backend. Its Engineering section presents four data-driven architecture groups: Frontend (React, TypeScript, Vite), Backend (C#, .NET, REST API), Data (PostgreSQL, EF Core), and Authentication (JWT). The shared project data also feeds metadata and structured data.
 
-3D Product Experience describes the confirmed turntable controls, animations, materials and audio within an e-commerce-style interface. Its JavaScript, Three.js, Blender, HTML and CSS stack is unchanged. Both real PNG screenshots are integrated without modifications: `public/images/projects/3D Product Experience.png` (1893 × 900) and `public/images/projects/3D Product Experience_1.png` (1849 × 884). The second is the principal image on Home, Projects and the detail page, and the existing metadata pipeline uses it when a public site URL is configured. Both appear in the shared gallery with descriptive captions/alt text, contain positioning and lazy loading. The principal image has intrinsic width/height; the gallery reserves its existing aspect ratio. No images were generated or cropped.
+3D Product Experience describes the confirmed turntable controls, animations, materials and audio within an e-commerce-style interface. Its JavaScript, Three.js, Blender, HTML and CSS stack is unchanged. All three real PNG screenshots are integrated without modifications: `public/images/projects/3D Product Experience.png` (1893 × 900), `public/images/projects/3D Product Experience_1.png` (1849 × 884) and `public/images/projects/3D Product Experience_2.png`. The second is the principal image on Home, Projects and the detail page, and the existing metadata pipeline uses it when a public site URL is configured. All three appear in the shared gallery with descriptive captions/alt text, contain positioning and lazy loading. The principal image has intrinsic width/height; the gallery reserves its existing aspect ratio. No images were generated or cropped.
 
 LinkedIn contact cards display the centrally configured label `linkedin.com/in/andre-costa`, following the latest explicit correction, while their destination remains `https://www.linkedin.com/in/andre-costa-/`. About retains the original portrait and brings it closer to the profile text. People & languages remains accurate because its section includes soft skills and languages. Routes, contextual navigation, prerender, AI emphasis, PDF, dependencies and project publication order are unchanged.
 
@@ -142,4 +143,4 @@ Deskentra's detail page presents Role (Full-Stack Developer), Focus (React · .N
 
 About begins with the CNC/CAM and precision manufacturing background, explaining the methodical, reliability-focused approach to software. The existing summary then connects this to React/TypeScript frontends, C#/.NET backends, Full-Stack capability and current Computer Engineering studies. The original portrait and discreet AI paragraph are preserved.
 
-Validation: build (including TypeScript), lint and check:pages passed. The six public routes were checked at 320, 375, 768, 1024 and 1440 px without horizontal overflow or broken loaded images. Both real 3D gallery images loaded with contain positioning on desktop and mobile. Keyboard Gallery navigation, active state and compact disclosure closure were verified; no browser warnings or errors were captured. No dependencies, routes, SEO titles/descriptions or public domain configuration were changed.
+Validation: build (including TypeScript), lint and check:pages passed. The seven public routes were checked at 320, 375, 768, 1024 and 1440 px without horizontal overflow or broken loaded images. All three real 3D gallery images loaded with contain positioning on desktop and mobile. Keyboard Gallery navigation, active state and compact disclosure closure were verified; no browser warnings or errors were captured. No dependencies, routes, SEO titles/descriptions or public domain configuration were changed.

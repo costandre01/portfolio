@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="André Costa — Software Developer and Computer Engineering student. Explore web applications, game development and interactive experiences." />
-    <meta name="theme-color" content="#080b0b" />
+    <meta name="description" content="André Costa — Front-End Developer working with React and TypeScript. Explore web applications, game development and interactive experiences." />
+    <meta name="theme-color" content="#101318" />
+    <script>
+      try {
+        var preference = localStorage.getItem('portfolio-theme');
+        document.documentElement.dataset.theme = preference === 'light' || preference === 'dark' ? preference : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      } catch (_) {
+        document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+    </script>
     <meta name="author" content="André Costa" />
     <!--page-meta-->
-    <title>André Costa | Software Developer</title>
+    <title>André Costa | Front-End Developer · React &amp; TypeScript</title>
   </head>
   <body>
     <div id="root"></div>

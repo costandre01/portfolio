@@ -1,4 +1,4 @@
 import { Projects } from '../components/Projects'
 export function ProjectsPage() {
-  return <><header className="container page-heading"><p className="eyebrow">PROJECT INDEX / ANDRÉ COSTA</p><h1>Software projects<span>.</span></h1><p>Game systems, full-stack platforms and interactive web experiences. Explore the work, the tools and the details.</p></header><Projects catalogue /></>
+  return <><header className="container page-heading"><p className="eyebrow">PROJECT INDEX / ANDRÉ COSTA</p><h1>Project library</h1><p>A support platform, a 3D product configurator, a digital board game and an IoT dashboard. Open a project for its implementation details, demo and source code.</p></header><Projects catalogue /></>
 }

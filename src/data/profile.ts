@@ -1,7 +1,10 @@
 // Shared by the home preview and web CV. Content from the current CV and supplied brief.
 export const profile = {
-  background: 'Before moving into software development, I spent several years working with CNC programming, CAM and precision manufacturing. That background shaped the way I approach software: understand the system, solve problems methodically and build solutions that work reliably.',
-  summary: 'Software Developer and Computer Engineering student with a Front-End focus and Full-Stack capability. I build React/TypeScript frontends and C#/.NET backends, bringing a practical engineering background to software development and real problem solving.',
+  role: 'Front-End Developer',
+  primaryStack: 'React & TypeScript',
+  introduction: 'I build interactive web interfaces with React and TypeScript, supported by full-stack experience in C#, .NET and PostgreSQL.',
+  background: 'My professional background is in CNC programming, CAM and precision manufacturing. Since February 2026, my work at CadSolid has combined CAM technical support, CNC programming and C# post-processor development. That experience taught me to understand systems, solve problems methodically and work within precise technical constraints.',
+  summary: 'I am building my path into front-end development alongside my professional work and the BSc in Computer Engineering I started in 2024. My project work combines React/TypeScript frontends and C#/.NET backends, with interactive 3D work in JavaScript and Three.js. The case studies show my frontend implementation; the work history below describes my professional roles.',
   ai: {
     title: 'Additional experience',
     skills: ['AI-assisted Development', 'LLM workflows', 'RAG', 'Vision/OCR'],

@@ -13,11 +13,11 @@ export function publicUrl(path = '/') {
 export function pageMetadata(pathname: string) {
   const project = publishedProjects.find(project => project.detail && `/projects/${project.id}` === pathname)
   const metadata = pathname === '/'
-    ? { title: 'André Costa | Front-End Developer · React & TypeScript', description: 'Front-End focused Software Developer building interactive applications with React and TypeScript, with full-stack experience in C#, .NET and PostgreSQL.' }
+    ? { title: `${site.name} | ${profile.role} · ${profile.primaryStack}`, description: profile.introduction }
     : pathname === '/about'
-      ? { title: 'André Costa | About & CV', description: 'The professional experience, education, technical skills and CV of André Costa, a software developer with a background in CNC/CAM and industry.' }
+      ? { title: 'André Costa | About & CV', description: 'The experience, education, technical skills and CV of André Costa, a Front-End Developer working with React and TypeScript, with a background in CNC/CAM and industry.' }
       : pathname === '/projects'
-        ? { title: 'André Costa | Software Projects', description: 'Explore Eldritch Horror, Deskentra, 3D Product Experience and IoT Smart Home Platform: interfaces, technical details, demos and GitHub repositories.' }
+        ? { title: 'André Costa | Software Projects', description: 'Explore Vekstoria, Deskentra, 3D Product Experience and IoT Smart Home Platform: interfaces, technical details, demos and GitHub repositories.' }
         : project
           ? { title: `${project.title} | André Costa`, description: project.description }
           : { title: 'Page not found | André Costa', description: 'This page could not be found. Explore André Costa’s portfolio and software projects.' }
@@ -49,7 +49,7 @@ export function metadataTags(metadata: ReturnType<typeof pageMetadata>) {
 }
 
 export const personData = {
-  '@type': 'Person', name: site.name, jobTitle: 'Front-End Developer',
+  '@type': 'Person', name: site.name, jobTitle: profile.role,
   description: profile.summary, email: site.email, sameAs: [site.githubUrl, site.linkedinUrl],
   knowsAbout: ['Software Development', 'Front-End', 'Full-Stack development', ...profile.keySkills, ...profile.ai.skills],
   affiliation: { '@type': 'CollegeOrUniversity', name: profile.education[0].institution },

@@ -3,6 +3,7 @@ export interface Project {
   title: string
   description: string
   summary?: string
+  developmentNote?: string
   published: boolean
   image?: string
   imageAlt?: string
@@ -15,6 +16,7 @@ export interface Project {
   demoLabel?: string
   featured: boolean
   category: string
+  context?: 'Personal project' | 'Academic project'
   detail?: {
     challenge?: string
     overviewTitle?: string
@@ -27,6 +29,8 @@ export interface Project {
     technicalTitle: string
     architecture?: { label: string; technologies: string[] }[]
     technicalPoints: string[]
+    frontendDecisions?: { title: string; decision: string; effect: string; tradeoff?: string }[]
+    interfaceDetails?: { title: string; behavior: string; implementation: string[] }[]
     galleryCaptions?: string[]
   }
 }

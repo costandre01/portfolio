@@ -1,16 +1,17 @@
 import { site } from '../data/site'
+import { profile } from '../data/profile'
 import { Icon } from './Icon'
 import { HeroProjectsShowcase } from './HeroProjectsShowcase'
 import { sitePath } from '../lib/urls'
 
 export function Hero() {
   return <section id="home" className="hero container">
-    <div className="hero-topline"><p className="eyebrow"><span className="status-dot" />Available for software opportunities</p><span className="mono muted hidden sm:block">PORTUGAL / FRONT-END & SOFTWARE</span></div>
+    <div className="hero-topline"><p className="eyebrow"><span className="status-dot" />Open to front-end opportunities</p><span className="mono muted hidden sm:block">BASED IN PORTUGAL</span></div>
     <div className="hero-layout">
       <div className="hero-copy">
-        <h1 aria-label="André Costa"><span className="hero-name-line">André</span>{' '}<span className="hero-name-line">Costa<span className="accent">.</span></span></h1>
-        <p className="hero-role">Software Developer<br /><span>Front-End focused.<br />Full-Stack capable.</span></p>
-        <p className="hero-description">I build interactive interfaces, full-stack applications and complex software systems.</p>
+        <h1>André Costa</h1>
+        <p className="hero-role">{profile.role}<br /><span>{profile.primaryStack}</span></p>
+        <p className="hero-description">{profile.introduction}</p>
         <div className="hero-actions"><a className="button button-primary" href="#projects">Explore my work<Icon /></a><a className="button button-secondary" href={sitePath('/about#cv')}>View CV<Icon /></a></div>
         <div className="hero-socials"><a href={site.githubUrl} target="_blank" rel="noopener noreferrer"><Icon name="github" />GitHub<Icon /></a>{site.linkedinUrl && <a href={site.linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn<Icon /></a>}</div>
       </div>

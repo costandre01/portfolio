@@ -10,15 +10,23 @@ npm run dev
 npm run build
 npm run lint
 npm run check:pages
+npm test
 npm run preview
 ```
 
+Component interaction tests live in `tests/` and run in jsdom with Vitest,
+React Testing Library and user-event. They cover theme switching by pointer and
+keyboard, persisted preferences, system preference changes, unavailable storage
+and image-error feedback. These are simulated DOM checks, not browser layout or
+accessibility audits. The About page describes their scope separately from the
+game-engine tests in Vekstoria.
+
 ## Pages and navigation
 
-- `/` — landing page with Hero, core technologies, selected work, short profile and contact.
+- `/` — landing page with Hero, core technologies, two selected projects, short profile and contact. The project library retains all four published projects.
 - `/about` — web CV with profile, professional experience, education, technical skills, soft skills, languages and contacts.
 - `/projects` — all published projects from the shared data array.
-- `/projects/eldritch-horror`
+- `/projects/vekstoria`
 - `/projects/deskentra`
 - `/projects/3d-product-experience`
 - `/projects/iot-smart-home`
@@ -82,7 +90,7 @@ No dependencies were added. The existing CV PDF and screenshot files were preser
 
 ## Modern project-led homepage update
 
-The homepage now uses an editorial two-line name, explicit Front-End/React positioning and two prioritized actions. `HeroProjectsShowcase` reuses the real Eldritch Horror and Deskentra assets in lightweight linked frames; the screenshots are contained in full, with overlap at frame edges only. The first image has high fetch priority. No generated imagery, animation dependencies or new packages were used.
+The homepage now uses an editorial two-line name, explicit Front-End/React positioning and two prioritized actions. `HeroProjectsShowcase` reuses the real Vekstoria and Deskentra assets in lightweight linked frames; the screenshots are contained in full, with overlap at frame edges only. The first image has high fetch priority. No generated imagery, animation dependencies or new packages were used.
 
 Home order: Hero → technology strip → selected projects → short profile → contact. Featured cards prioritize images and short summaries; the full technical descriptions remain on the detail pages. The 3D project now uses its real screenshot. The real profile photo appears only on About.
 

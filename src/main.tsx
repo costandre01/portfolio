@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
+import './theme.css'
 import App from './App.tsx'
 import { pagePath } from './lib/urls'
 import { applyMetadata } from './lib/metadata'

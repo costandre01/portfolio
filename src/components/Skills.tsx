@@ -8,7 +8,7 @@ const groups = [
   { title: 'Tools & Other', label: 'Tools & complementary experience', items: ['Java', 'Vite', 'GitHub', 'Blender', 'Three.js', 'IoT'] },
 ]
 export function Skills() {
-  return <section id="skills" className="section container"><SectionHeading number="04" label="Technology stack" title="The right tools. Well applied." description="The technologies I use across interfaces, application logic and development workflows." />
+  return <section id="skills" className="section container"><SectionHeading number="04" label="Technology stack" title="Technical skills" />
     <div className="skills-grid">{groups.map((group, index) => <article className="skill-group" data-reveal key={group.title}><div className="skill-header"><span className="skill-number mono">0{index + 1} /</span><Icon name="code" /></div><h3>{group.title}</h3><p>{group.label}</p><ul className="tags">{group.items.map(item => <li key={item}>{item}</li>)}</ul></article>)}</div>
     <details className="additional-experience" data-reveal><summary>{profile.ai.title}</summary><p>{profile.ai.summary}</p><ul className="tags">{profile.ai.skills.map(skill => <li key={skill}>{skill}</li>)}</ul></details>
   </section>
